@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <Hello-World msg="Welcome to Your Vue.js App" age="17"/>
   </div>
 </template>
 

@@ -108,7 +108,7 @@ export default {
   name: "HelloWorld",
   props: {
     msg: String,
-    age: Number
+    age: String
   }
 };
 </script>

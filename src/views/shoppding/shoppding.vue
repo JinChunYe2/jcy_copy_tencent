@@ -1,5 +1,7 @@
 <template>
     <div>
+        <cheCheng :msg = 'msg'></cheCheng>
+
         <div class = "content">
             <div  v-if = "list != ''">
                 <tr v-for = "(item,index) in list" :key = item.id>
@@ -22,17 +24,30 @@
             </div>
             <div>
                 <table>
+                    <label>
+                        <input type="radio" name="sex" id="" v-model = "sex" value = "男">男
+                    </label>
+                    <input type="radio" name="sex" id="" v-model = "sex" value = "女">女{{sex}}
                     <input type="text" v-model = "text">
                     {{ text }}
                     <input type="text" :value = "textone" @input = "textone = $event.target.value">
                     {{ textone }}
                 </table>
             </div>
+        
         </div>
+        <div>
+                <input type="checkbox" v-model = "checkbox" value = "篮球">篮球
+                <input type="checkbox" v-model = "checkbox" value = "1">篮球
+                <input type="checkbox" v-model = "checkbox" value = "2">篮球
+                <input type="checkbox" v-model = "checkbox" value = "3">篮球
+        </div>
+        {{checkbox}}
     </div>
 </template>
 
 <script>
+    import cheCheng from '../chechen'
     let list = [
         {
             id : 1,
@@ -73,6 +88,9 @@
                 data:[222,333,5,4,66,77,32,45],
                 text:'这是一段文字',
                 textone:'另一端文字',
+                sex:'女',
+                checkbox: [],
+                msg:'靳春野'
             }
         },
         computed: {
@@ -91,7 +109,6 @@
                 //     return value + n
                 // },0)
             },
-
         },
         methods: {
             removeClack(index){
@@ -99,6 +116,9 @@
                 self.list.splice(index,1)
                 // self.list[index] = '';
             },
+        },
+        components: {
+            cheCheng
         }
     }
 </script>

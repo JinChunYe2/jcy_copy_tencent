@@ -1,3 +1,4 @@
 module.exports = {
-    lintOnSave: false
+    // 设置lintOnSave为false,禁用eslint。
+    lintOnSave: false,
 }
